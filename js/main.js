@@ -38,6 +38,13 @@ let circle = svg.append('circle')
   .attr('cy', '250')
   .attr('r', '60')
   .attr('fill', '#b2df8a')
+    .on('dblclick', function() {
+
+        console.log('dblclick')
+        circle.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
+        rect.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
+
+    })
 
 
 
