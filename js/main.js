@@ -41,9 +41,11 @@ let rect = svg.append('rect')
     .on('mouseout', function(){
 
 
-        circle.style('stroke', '#f92882');
-        circle.style('stroke-width', '0px');
+        rect.style('stroke', '#f92882');
+        rect.style('stroke-width', '0px');
     })
+    .call(d3.drag().on("drag", moveRect))
+
 
 
 
@@ -67,12 +69,28 @@ let circle = svg.append('circle')
         circle.style('stroke', '#f92882');
         circle.style('stroke-width', '4px');
     })
-    .on('mouseout', function(){
+    .on('mouseout', function() {
 
 
         circle.style('stroke', '#f92882');
         circle.style('stroke-width', '0px');
     })
+    .call(d3.drag().on("drag", moveCircle))
 
+function moveCircle (event) {
+    console.log('dragged')
+    console.log(event)
+    console.log(this)
+    //Adapted from https://observablehq.com/@d3/click-vs-drag
+    d3.select(this).raise().attr("cx", this.cx = event.x).attr("cy", this.cy = event.y);
+}
 
+function moveRect (event) {
+
+    console.log('dragged')
+    console.log(event)
+    console.log(this)
+    //Adapted from https://observablehq.com/@d3/click-vs-drag
+    d3.select(this).raise().attr("x", this.x = event.x - 3).attr("y", this.y = event.y + 3);
+}
 
