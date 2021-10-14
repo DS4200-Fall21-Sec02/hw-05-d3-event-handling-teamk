@@ -1,6 +1,3 @@
-// write your javascript code here.
-// feel free to change the pre-set attributes as you see fit
-
 let margin = {
     top: 60,
     left: 50,
@@ -91,6 +88,6 @@ function moveRect (event) {
     console.log(event)
     console.log(this)
     //Adapted from https://observablehq.com/@d3/click-vs-drag
-    d3.select(this).raise().attr("x", this.x = event.x).attr("y", this.y = event.y);
+    d3.select(this).raise().attr("x", this.x = event.x - 43).attr("y", this.y = event.y - 25);
 }
 
