@@ -30,7 +30,23 @@ let rect = svg.append('rect')
     //Code for random Color:
     //https://css-tricks.com/snippets/javascript/random-hex-color/
       circle.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
-  });
+  })
+    .on('mouseover', function(){
+
+
+
+        rect.style('stroke', '#f92882');
+        rect.style('stroke-width', '4px');
+    })
+    .on('mouseout', function(){
+
+
+        circle.style('stroke', '#f92882');
+        circle.style('stroke-width', '0px');
+    })
+
+
+
 
 // Add a circle 
 let circle = svg.append('circle') 
@@ -40,10 +56,22 @@ let circle = svg.append('circle')
   .attr('fill', '#b2df8a')
     .on('dblclick', function() {
 
-        console.log('dblclick')
+
         circle.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
         rect.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
 
+    })
+    .on('mouseover', function(){
+
+
+        circle.style('stroke', '#f92882');
+        circle.style('stroke-width', '4px');
+    })
+    .on('mouseout', function(){
+
+
+        circle.style('stroke', '#f92882');
+        circle.style('stroke-width', '0px');
     })
 
 
