@@ -91,6 +91,6 @@ function moveRect (event) {
     console.log(event)
     console.log(this)
     //Adapted from https://observablehq.com/@d3/click-vs-drag
-    d3.select(this).raise().attr("x", this.x = event.x - 3).attr("y", this.y = event.y + 3);
+    d3.select(this).raise().attr("x", this.x = event.x).attr("y", this.y = event.y);
 }
 
