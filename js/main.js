@@ -25,7 +25,12 @@ let rect = svg.append('rect')
   .attr('y', '200')
   .attr('width', '20%')
   .attr('height', '20%')
-  .attr('fill', '#a6cee3'); 
+  .attr('fill', '#a6cee3')
+  .on("click", function() {
+    //Code for random Color:
+    //https://css-tricks.com/snippets/javascript/random-hex-color/
+      circle.style('fill', "#" + String(Math.floor(Math.random()*16777215).toString(16)))
+  });
 
 // Add a circle 
 let circle = svg.append('circle') 
